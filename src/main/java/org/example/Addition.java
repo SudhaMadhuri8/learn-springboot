@@ -11,12 +11,13 @@ public class Addition {
     @Autowired
     Calc calc;
 
-    @PostMapping("/add")
+    @PostMapping("/addition")
     public ResponseEntity<Result> addNumbers(@RequestBody AddingTwoNum addingTwoNum) {
         long result = calc.add(addingTwoNum.getNum1(), addingTwoNum.getNum2());
         Result result1 = new Result(addingTwoNum.getNum1(), addingTwoNum.getNum2(), result);
         return ResponseEntity.ok(result1);
     }
+
 
     public static class Result {
         private long num1;

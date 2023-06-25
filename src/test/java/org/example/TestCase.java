@@ -1,31 +1,21 @@
 package org.example;
 
-import org.junit.Test;
-import org.junit.Assert.*;
 import org.junit.jupiter.api.Assertions;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.testng.annotations.Test;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotEquals;
 
-import static org.junit.Assert.*;
+public class TestCase {
 
-/**
- * Unit test for simple App.
- */
-
-public class Testcase
-{
-    /**
-     * Rigorous Test :-)
-     */
-
-    @Autowired
-    Calc calc;
+    Calc calc = new Calc();
 
     @Test
     public void AddTwoNumbers()
     {
         long expectedSum = 10;
         long actualSum = calc.add(4,6);
-        assertEquals(expectedSum, actualSum);
+        Assertions.assertEquals(expectedSum, actualSum);
 
     }
 
@@ -34,7 +24,7 @@ public class Testcase
     {
         long expectedSum = 11;
         long actualSum = calc.add(4,6);
-        assertNotEquals(expectedSum, actualSum);
+        Assertions.assertNotEquals(expectedSum, actualSum);
 
     }
 
